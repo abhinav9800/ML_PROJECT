@@ -29,8 +29,8 @@ from urllib.parse import urlparse
 import dagshub
 #dagshub.init(repo_owner='krishnaik06', repo_name='networksecurity', mlflow=True)
 
-os.environ["MLFLOW_TRACKING_URI"]="https://github.com/abhinav9800/new_end_to_end_Project.git"
-os.environ["MLFLOW_TRACKING_USERNAME"]="abhinav9800"
+os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/abhinavvvv0098/new_end_to_end_Project.mlflow"
+os.environ["MLFLOW_TRACKING_USERNAME"]="abhinavvvv0098"
 os.environ["MLFLOW_TRACKING_PASSWORD"]="90faa938e1cea95f770e80a04848ce48413de2f0"
 
 
@@ -46,7 +46,7 @@ class ModelTrainer:
             raise NetworkSecurityException(e,sys)
         
     def track_mlflow(self,best_model,classificationmetric):
-        mlflow.set_registry_uri("https://github.com/abhinav9800/new_end_to_end_Project.git")
+        mlflow.set_registry_uri("https://dagshub.com/abhinavvvv0098/new_end_to_end_Project.mlflow")
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
         with mlflow.start_run():
             f1_score=classificationmetric.f1_score
